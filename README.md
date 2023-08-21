@@ -2,7 +2,7 @@
 
 1. 개요
 
-MONAMI.com 사이트를 클론 하면서 Jquery, MySQL사용법 익히기
+  MONAMI.com 사이트를 클론 하면서 Jquery, MySQL사용법 익히기
 
 2. 작업툴 : IntellJ, Spring, Java, HTML/CSS/JS(Jquery), Mybatis, MySQL
 
