@@ -1,0 +1,268 @@
+* {
+    padding: 0;
+    margin: 0;
+    /*border: 1px solid red;*/
+}
+
+body {
+    font-family: "Noto Sans KR", "돋움", dotum, sans-serif;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 999999999;
+    background-color: white;
+}
+
+.header > .header-box {
+    width: 100%;
+    height: 4rem;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #9b9a9a;
+}
+
+.header > .header-box > .header-left {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding-left: 1rem;
+}
+
+.header > .header-box > .header-left > .language {
+    margin: 0 0.75rem 0 0.75rem;
+    width: 5.5rem;
+    cursor: pointer;
+    max-height: 1.5rem;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    border: 1px solid #9b9a9a;
+    border-radius: 8px;
+    position: absolute;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.header > .header-box > .header-left > .language > * {
+    width: 100%;
+    font-size: 12px;
+}
+
+.header > .header-box > .header-left > .language > .korea {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.header > .header-box > .header-left > .language > .korea > .up {
+    padding-left: 0.25rem;
+}
+
+.header > .header-box > .header-left > .language > .korea > .down {
+    padding-left: 0.25rem;
+}
+
+.header > .header-box > .header-left > .language > .korea > .korea-option {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.header > .header-box > .header-left > .language > .korea > .korea-option > * {
+    padding-left: 0.25rem;
+}
+
+.header > .header-box > .header-left > .language > .english {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.header > .header-box > .header-left > .language > .english > * {
+    padding-left: 0.25rem;
+
+}
+
+.header > .header-box > .header-left > .sns {
+    margin-left: 7rem;
+}
+
+.header > .header-box > .header-left > .sns > .facebook {
+}
+
+.header > .header-box > .header-left > .sns > .facebook > a > img {
+    width: 30px;
+    height: 30px;
+}
+
+.header > .header-box > .header-left > .sns > .instagram > a > img {
+    width: 30px;
+    height: 30px;
+}
+
+.header > .header-box > .header-right {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    color: #9b9a9a;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-right: 3rem;
+
+}
+
+.header > .header-box > .header-right > * {
+    padding: 0 0.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header > .header-box > .header-right > .home {
+    border-right: 1px solid #9b9a9a;
+}
+
+.header > .header-box > .header-right > .siteMap {
+    border-right: 1px solid #9b9a9a;
+}
+
+.header > .nav {
+    width: 100%;
+
+
+}
+
+.header > .nav > .nav-box {
+    padding: 0 2rem 0 2rem;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    position: relative;
+
+}
+
+
+.header > .nav > .nav-box > .h1 {
+    width: 162px;
+    height: 89px;
+}
+
+.header > .nav > .nav-box > .nav-title {
+    width: 1076px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+.header > .nav > .nav-box > .nav-title:after{
+    display: block;
+    clear: both;
+}
+.header > .nav > .nav-box > .nav-title > ul {
+    width: 940px;
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.header > .nav > .nav-box > .nav-title > ul > li {
+    font-size: 17px;
+    height: 89px;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 33px;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: top;
+}
+.header > .nav > .nav-box > .nav-title > ul > li a{
+    transition: all 0.2s;
+}
+
+.header > .nav > .nav-box > .nav-title > ul > li > ul{
+    display: none;
+    position: absolute;
+    top: 90px;
+    width: 180px;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    padding-top: 12px;
+    margin-top: 0;
+    padding-bottom: 12px;
+    margin-bottom: 0;
+
+}
+.header > .nav > .nav-box > .nav-title > ul > li:first-child {
+    margin: 0 33px 0 0;
+}
+
+.header > .nav > .nav-box > .nav-title > ul > li:last-child {
+    margin: 0 0 0 33px;
+}
+
+.header > .nav > .nav-box > .nav-title > ul > li > ul > li{
+    border-bottom: 1px solid #e1e1e1;
+    font-size: 14px;
+    color: #303030;
+    padding: 15px 30px;
+    margin: 0 15px;
+}
+.header > .nav > .nav-box > .nav-title > ul > li > ul > li>a:hover{
+    color: red;
+}
+
+.header > .nav > .nav-box > .nav-title > .search {
+    border: 1px solid red;
+width: 4rem;
+    height: 2rem;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+
+}
+
+
+
+.visual {
+    width: 100%;
+    height: 652px;
+    top: 155px;
+    position: relative;
+    border: 1px solid red;
+
+}
+
+.visual > img {
+    position: relative;
+}
+
+.visual > .textarea {
+    position: absolute;
+    color: red;
+}
