@@ -1,14 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Noto+Serif+KR:wght@300&display=swap');
 * {
     padding: 0;
     margin: 0;
     /*border: 1px solid red;*/
 }
-
-body {
-    font-family: "Noto Sans KR", "돋움", dotum, sans-serif;
-    height: auto;
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
 
+body {
+    font-family: "Noto Sans KR","돋움",dotum,sans-serif;
+    height: auto;
+}
+textarea{
+    font-family: "Noto Sans KR","돋움",dotum,sans-serif;
+}
 a {
     text-decoration: none;
     color: black;
@@ -174,12 +186,14 @@ ul {
     display: flex;
     flex-direction: row;
 }
-.header > .nav > .nav-box > .nav-title:after{
+
+.header > .nav > .nav-box > .nav-title:after {
     display: block;
     clear: both;
 }
+
 .header > .nav > .nav-box > .nav-title > ul {
-    width: 940px;
+    width: 100%;
     align-items: start;
     display: flex;
     flex-direction: row;
@@ -200,23 +214,29 @@ ul {
     text-align: center;
     vertical-align: top;
 }
-.header > .nav > .nav-box > .nav-title > ul > li a{
+
+.header > .nav > .nav-box > .nav-title > ul > li> a {
     transition: all 0.2s;
 }
+.header > .nav > .nav-box > .nav-title > ul > li a:hover{
+color: #c40f39;
+transition: all 0.3s;
+}
 
-.header > .nav > .nav-box > .nav-title > ul > li > ul{
+.header > .nav > .nav-box > .nav-title > ul > li > ul {
     display: none;
     position: absolute;
     top: 90px;
-    width: 180px;
-    background: rgba(255,255,255,0.9);
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    width: 240px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
     padding-top: 12px;
     margin-top: 0;
     padding-bottom: 12px;
     margin-bottom: 0;
 
 }
+
 .header > .nav > .nav-box > .nav-title > ul > li:first-child {
     margin: 0 33px 0 0;
 }
@@ -225,44 +245,166 @@ ul {
     margin: 0 0 0 33px;
 }
 
-.header > .nav > .nav-box > .nav-title > ul > li > ul > li{
+.header > .nav > .nav-box > .nav-title > ul > li > ul > li {
     border-bottom: 1px solid #e1e1e1;
     font-size: 14px;
     color: #303030;
     padding: 15px 30px;
     margin: 0 15px;
 }
-.header > .nav > .nav-box > .nav-title > ul > li > ul > li>a:hover{
-    color: red;
-}
 
-.header > .nav > .nav-box > .nav-title > .search {
-    border: 1px solid red;
-width: 4rem;
-    height: 2rem;
+
+.header > .nav > .nav-box > .search {
+
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: start;
-
 }
+.header > .nav > .nav-box > .search > a{
+    margin-right: 15px;
+}
+.menu-trigger,
+.menu-trigger span {
+    display : inline-block;
+    transition : all .4s;
+    box-sizing : border-box;
+}
+.menu-trigger {
+    position : relative;
+    width : 19px;
+    height : 18px;
+}
+.menu-trigger span {
+    position : absolute;
+    left : 0;
+    width : 100%;
+    height : 2px;
+    background-color : black;
+    border-radius : 4px;
+}
+.menu-trigger span:nth-of-type(1) {
+    top : 0;
+}
+.menu-trigger span:nth-of-type(2) {
+    top : 8px;
+}
+.menu-trigger span:nth-of-type(3) {
+    bottom : 0;
+}
+
+.menu-trigger.active span :nth-of-type(1) {
+    -webkit-transform : translateY(20px) rotate(-45deg);
+    transform : translateY(20px) rotate(-45deg);
+}
+.menu-trigger.active span :nth-of-type(2) {
+    opacity : 0;
+}
+.menu-trigger.active span :nth-of-type(3) {
+    -webkit-transform : translateY(-20px) rotate(45deg);
+    transform : translateY(-20px) rotate(45deg);
+}
+
+
+
+
+
+.header > .nav > .nav-box > .all-menu{
+    background: rgba(255,255,255,0.9);
+    position: absolute;
+    top: 95px;
+    width: 94%;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    /*transform: translateY(-20px);*/
+    transition : opacity 0.5s ease, visibility 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+}
+.header > .nav > .nav-box > .all-menu.active{
+    opacity: 1;
+    visibility: visible;
+    max-height: 460px;
+    /*transform: translateY(0);*/
+}
+
+
+
+.header > .nav > .nav-box > .all-menu > .menu-box{
+    float: left;
+    width: 12.66%;
+    padding: 50px 2%;
+    height: 360px;
+    box-shadow:-1px 0px 0px #e5e4e4 inset;
+}
+.header > .nav > .nav-box > .all-menu > .menu-box > h2{
+    font-size: 21px;
+    height: 50px;
+    margin-bottom: 20px;
+    color: #303030;
+    font-weight: 500;
+}
+.header > .nav > .nav-box > .all-menu > .menu-box > h2:after{
+    display: block;
+    content: "";
+    width: 19px;
+    height: 2px;
+    margin: 20px 0;
+    background: #c40f39;
+}
+
+.header > .nav > .nav-box > .all-menu > .menu-box > ul > li{
+    margin-bottom: 15px;
+}
+.header > .nav > .nav-box > .all-menu > .menu-box > ul > li > a{
+    cursor: pointer;
+    display: block;
+    font-size: 17px;
+    color: #6e6e6e;
+    font-weight: 400;
+}
+.header > .nav > .nav-box > .all-menu > .menu-box > ul > li > a:hover{
+color: #c40f39;
+    transition: all 0.3s;
+}
+
+
+
+
 
 
 
 .visual {
     width: 100%;
     height: 652px;
-    top: 155px;
+    top: 160px;
     position: relative;
     border: 1px solid red;
-
+    background-image: url("http://www.monami.com/images/main/visual1.jpg");
 }
 
-.visual > img {
-    position: relative;
-}
 
 .visual > .textarea {
     position: absolute;
-    color: red;
+    color: white;
+    height: 652px;
+    margin-left: 100px;
+}
+.visual > .textarea > .write1::before{
+    display: block;
+    content: "";
+    width: 80px;
+    height: 1px;
+    background: #fff;
+    margin: 157px 0 10px 0;
+}
+.visual > .textarea > .write1{
+    font-size: 50px;
+    line-height: 120%;
+    font-weight: 200;
+}
+.visual > .textarea > .write2{
+color: #e1e1e1;
+    font-size: 15px;
+    line-height: 140%;
+    font-weight: 300;
 }
