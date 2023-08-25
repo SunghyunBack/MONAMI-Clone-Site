@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Noto+Serif+KR:wght@300&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     /*border: 1px solid red;*/
 }
+
 h2 {
     display: block;
     font-size: 1.5em;
@@ -15,12 +17,14 @@ h2 {
 }
 
 body {
-    font-family: "Noto Sans KR","돋움",dotum,sans-serif;
+    font-family: "Noto Sans KR", "돋움", dotum, sans-serif;
     height: auto;
 }
-textarea{
-    font-family: "Noto Sans KR","돋움",dotum,sans-serif;
+
+textarea {
+    font-family: "Noto Sans KR", "돋움", dotum, sans-serif;
 }
+
 a {
     text-decoration: none;
     color: black;
@@ -37,6 +41,7 @@ ul {
     position: fixed;
     z-index: 999999999;
     background-color: white;
+    border-bottom: 1px solid #9b9a9a;
 }
 
 .header > .header-box {
@@ -215,12 +220,13 @@ ul {
     vertical-align: top;
 }
 
-.header > .nav > .nav-box > .nav-title > ul > li> a {
+.header > .nav > .nav-box > .nav-title > ul > li > a {
     transition: all 0.2s;
 }
-.header > .nav > .nav-box > .nav-title > ul > li a:hover{
-color: #c40f39;
-transition: all 0.3s;
+
+.header > .nav > .nav-box > .nav-title > ul > li a:hover {
+    color: #c40f39;
+    transition: all 0.3s;
 }
 
 .header > .nav > .nav-box > .nav-title > ul > li > ul {
@@ -261,56 +267,62 @@ transition: all 0.3s;
     flex-direction: row;
     justify-content: start;
 }
-.header > .nav > .nav-box > .search > a{
+
+.header > .nav > .nav-box > .search > a {
     margin-right: 15px;
 }
+
 .menu-trigger,
 .menu-trigger span {
-    display : inline-block;
-    transition : all .4s;
-    box-sizing : border-box;
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
 }
+
 .menu-trigger {
-    position : relative;
-    width : 19px;
-    height : 18px;
+    position: relative;
+    width: 19px;
+    height: 18px;
 }
+
 .menu-trigger span {
-    position : absolute;
-    left : 0;
-    width : 100%;
-    height : 2px;
-    background-color : black;
-    border-radius : 4px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    border-radius: 4px;
 }
+
 .menu-trigger span:nth-of-type(1) {
-    top : 0;
+    top: 0;
 }
+
 .menu-trigger span:nth-of-type(2) {
-    top : 8px;
+    top: 8px;
 }
+
 .menu-trigger span:nth-of-type(3) {
-    bottom : 0;
+    bottom: 0;
 }
 
 .menu-trigger.active span :nth-of-type(1) {
-    -webkit-transform : translateY(20px) rotate(-45deg);
-    transform : translateY(20px) rotate(-45deg);
+    -webkit-transform: translateY(20px) rotate(-45deg);
+    transform: translateY(20px) rotate(-45deg);
 }
+
 .menu-trigger.active span :nth-of-type(2) {
-    opacity : 0;
+    opacity: 0;
 }
+
 .menu-trigger.active span :nth-of-type(3) {
-    -webkit-transform : translateY(-20px) rotate(45deg);
-    transform : translateY(-20px) rotate(45deg);
+    -webkit-transform: translateY(-20px) rotate(45deg);
+    transform: translateY(-20px) rotate(45deg);
 }
 
 
-
-
-
-.header > .nav > .nav-box > .all-menu{
-    background: rgba(255,255,255,0.9);
+.header > .nav > .nav-box > .all-menu {
+    background: rgba(255, 255, 255, 0.9);
     position: absolute;
     top: 95px;
     width: 94%;
@@ -318,9 +330,10 @@ transition: all 0.3s;
     opacity: 0;
     visibility: hidden;
     /*transform: translateY(-20px);*/
-    transition : opacity 0.5s ease, visibility 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease, visibility 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
 }
-.header > .nav > .nav-box > .all-menu.active{
+
+.header > .nav > .nav-box > .all-menu.active {
     opacity: 1;
     visibility: visible;
     max-height: 460px;
@@ -328,22 +341,23 @@ transition: all 0.3s;
 }
 
 
-
-.header > .nav > .nav-box > .all-menu > .menu-box{
+.header > .nav > .nav-box > .all-menu > .menu-box {
     float: left;
     width: 12.66%;
     padding: 50px 2%;
     height: 360px;
-    box-shadow:-1px 0px 0px #e5e4e4 inset;
+    box-shadow: -1px 0px 0px #e5e4e4 inset;
 }
-.header > .nav > .nav-box > .all-menu > .menu-box > h2{
+
+.header > .nav > .nav-box > .all-menu > .menu-box > h2 {
     font-size: 21px;
     height: 50px;
     margin-bottom: 20px;
     color: #303030;
     font-weight: 500;
 }
-.header > .nav > .nav-box > .all-menu > .menu-box > h2:after{
+
+.header > .nav > .nav-box > .all-menu > .menu-box > h2:after {
     display: block;
     content: "";
     width: 19px;
@@ -352,34 +366,33 @@ transition: all 0.3s;
     background: #c40f39;
 }
 
-.header > .nav > .nav-box > .all-menu > .menu-box > ul > li{
+.header > .nav > .nav-box > .all-menu > .menu-box > ul > li {
     margin-bottom: 15px;
 }
-.header > .nav > .nav-box > .all-menu > .menu-box > ul > li > a{
+
+.header > .nav > .nav-box > .all-menu > .menu-box > ul > li > a {
     cursor: pointer;
     display: block;
     font-size: 17px;
     color: #6e6e6e;
     font-weight: 400;
 }
-.header > .nav > .nav-box > .all-menu > .menu-box > ul > li > a:hover{
-color: #c40f39;
+
+.header > .nav > .nav-box > .all-menu > .menu-box > ul > li > a:hover {
+    color: #c40f39;
     transition: all 0.3s;
 }
 
 
-
-
-
-
-
 .visual {
     width: 100%;
-    height: 652px;
-    top: 160px;
+    height: 492px;
+    padding-top: 160px;
+    overflow: hidden;
     position: relative;
-    border: 1px solid red;
     background-image: url("http://www.monami.com/images/main/visual1.jpg");
+    object-fit: cover;
+    background-repeat: no-repeat;
 }
 
 
@@ -389,7 +402,8 @@ color: #c40f39;
     height: 652px;
     margin-left: 100px;
 }
-.visual > .textarea > .write1::before{
+
+.visual > .textarea > .write1::before {
     display: block;
     content: "";
     width: 80px;
@@ -397,14 +411,254 @@ color: #c40f39;
     background: #fff;
     margin: 157px 0 10px 0;
 }
-.visual > .textarea > .write1{
+
+.visual > .textarea > .write1 {
     font-size: 50px;
     line-height: 120%;
     font-weight: 200;
 }
-.visual > .textarea > .write2{
-color: #e1e1e1;
+
+.visual > .textarea > .write2 {
+    color: #e1e1e1;
     font-size: 15px;
     line-height: 140%;
     font-weight: 300;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    padding-top: 75px;
+}
+
+.container > .container-box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container > .container-box > .container-box-up {
+    width: 1200px;
+    margin: 12px 0 22px 0;
+    /*align-items: ;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container > .container-box > .container-box-up > .left{
+    width: 392px;
+    height: 360px;
+    margin-right: 22px;
+    border: 1px solid red;
+}
+.container > .container-box > .container-box-up > .left > .sub-title{
+    margin-bottom: 36px;
+}
+.container > .container-box > .container-box-up > .left > .sub-title > span{
+    height: 90px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #000;
+    line-height: 120%;
+}
+.container > .container-box > .container-box-up > .left > .sub-title > span:after{
+    display: block;
+    content: "";
+    width: 20px;
+    height: 3.5px;
+    margin: 10px 0;
+    background: #c40f39;
+}
+.container > .container-box > .container-box-up > .left > .sub-title> div{
+    font-size: 13px;
+    color: #6e6e6e;
+    margin-top: 10px;
+}
+.container > .container-box > .container-box-up > .left > .item{
+    border: 1px solid pink;
+    height: 205px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container > .container-box > .container-box-up > .left > .item > .panner,
+
+.container > .container-box > .container-box-up > .left > .item > .panner{
+    width: 90%;
+    height: 90%;
+    color: white;
+    background-color: #c40f39;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.container > .container-box > .container-box-up > .left > .item > .panner > .plus,
+.container > .container-box > .container-box-up > .left > .item > .panner > .plus span{
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
+}
+
+.container > .container-box > .container-box-up > .left > .item > .panner > .plus{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-top: 20px;
+}
+.container > .container-box > .container-box-up > .left > .item > .panner > .plus span{
+    position: absolute;
+    margin-top: 20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 4px;
+}
+.container > .container-box > .container-box-up > .left > .item > .panner > .plus span:nth-of-type(1){
+
+}
+.container > .container-box > .container-box-up > .left > .item > .panner > .plus span:nth-of-type(2){
+    transform: rotate(90deg);
+}
+
+    .container > .container-box > .container-box-up > .right{
+    border: 1px solid blue;
+    width: 786px;
+    height: 360px;
+    align-items: center;
+    display: flex;
+    /*flex-direction: ;*/
+    justify-content: center;
+}
+.container > .container-box > .container-box-up > .right > .item{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    /*flex-direction: ;*/
+    justify-content: center;
+}
+.container > .container-box > .container-box-up > .right > .item > .panner{
+    width: 90%;
+    height: 90%;
+    color: white;
+    background-color: #c40f39;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container > .container-box > .container-box-up > .left > .item > .panner > .plus,
+.container > .container-box > .container-box-up > .left > .item > .panner > .plus span{
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
+}
+
+.container > .container-box > .container-box-up > .right > .item > .panner > .plus{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-top: 20px;
+}
+.container > .container-box > .container-box-up > .right> .item > .panner > .plus span{
+    position: absolute;
+    margin-top: 20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 4px;
+}
+.container > .container-box > .container-box-up > .right> .item > .panner > .plus span:nth-of-type(1){
+
+}
+.container > .container-box > .container-box-up > .right> .item > .panner > .plus span:nth-of-type(2){
+    transform: rotate(90deg);
+}
+
+
+
+
+
+.container > .container-box > .container-box-down{
+    width: 1200px;
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid purple;
+}
+.container > .container-box > .container-box-down> .item{
+    align-items: center;
+    display: flex;
+    /*flex-direction: ;*/
+    justify-content: center;
+}
+
+.container > .container-box > .container-box-down > .item-one{
+    border: 1px solid green;
+    width: 392px;
+    height: 292px;
+}
+.container > .container-box > .container-box-down > .item-two{
+    border: 1px solid yellow;
+    width: 450px;
+    height: 439px;
+
+}
+.container > .container-box > .container-box-down > .item-three{
+    border: 1px solid orange;
+    width: 312px;
+    height: 292px;
+}
+
+.container > .container-box > .container-box-down> .item> .panner{
+    width: 90%;
+    height: 90%;
+    color: white;
+    background-color: #c40f39;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container > .container-box > .container-box-down> .item>.panner> .plus,
+.container > .container-box > .container-box-down> .item>.panner> .plus span{
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
+}
+
+.container > .container-box > .container-box-down> .item>.panner> .plus{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-top: 20px;
+
+}
+.container > .container-box > .container-box-down> .item>.panner> .plus span{
+    position: absolute;
+    margin-top: 20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.container > .container-box > .container-box-down> .item>.panner> .plus span:nth-of-type(1){
+
+}
+.container > .container-box > .container-box-down> .item>.panner> .plus span:nth-of-type(1){
+    transform: rotate(90deg);
 }
