@@ -840,11 +840,12 @@ ul {
     font-weight: normal;
 }
 
-.video{
+.video {
     width: 1263px;
     height: 711px;
 }
-.video > video{
+
+.video > video {
     width: 1263px;
     height: 711px;
 }
@@ -855,29 +856,34 @@ ul {
     flex-direction: row;
     /*justify-content: ;*/
     width: 1400px;
-    margin: 0 59.6px;
-
+    height: 360px;
+    padding: 0 38px;
+    border-bottom: 1px solid #ddd;
 }
 
 .new > .left {
     width: 480px;
-    margin: 20px 30px 0 30px;
-    border: 1px solid purple;
+    padding: 20px 30px 0 0;
+    border-right: 1px solid #ddd;
+
 }
-.new > .left > .new-name{
-/*align-items: ;*/
-display: flex;
-flex-direction: row;
-justify-content: space-between;
+
+.new > .left > .new-name {
+    /*align-items: ;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
-.new > .left > .new-name > .name-title{
+
+.new > .left > .new-name > .name-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 600;
     color: #000;
     line-height: 120%;
 }
-.new > .left > .new-name > .name-title:after{
+
+.new > .left > .new-name > .name-title:after {
     content: "";
     display: block;
     width: 26px;
@@ -886,14 +892,15 @@ justify-content: space-between;
     background: #c40f39;
 }
 
-.new > .left > .new-name > .more{
+.new > .left > .new-name > .more {
     height: 16px;
     font-size: 11px;
     color: #3d3e38;
     letter-spacing: 1px;
     border-bottom: 1px solid #3d3e38;
 }
-.new > .left > .headlight{
+
+.new > .left > .headlight {
     margin: 15px 0;
     /*align-items: ;*/
     display: flex;
@@ -901,20 +908,23 @@ justify-content: space-between;
     /*justify-content: ;*/
     border-bottom: 2px solid #bbb;
 }
-.new > .left > .headlight > .img{
+
+.new > .left > .headlight > .img {
     width: 164px;
     height: 116px;
     background-color: red;
     margin-bottom: 15px;
 }
-.new > .left > .headlight > .item > .title{
+
+.new > .left > .headlight > .item > .title {
     width: 250px;
     text-overflow: ellipsis;
     font-size: 21px;
     color: #000;
     margin-bottom: 5px;
 }
-.new > .left > .headlight > .item > .content{
+
+.new > .left > .headlight > .item > .content {
     width: 250px;
     max-height: 54px;
     text-overflow: ellipsis;
@@ -923,24 +933,27 @@ justify-content: space-between;
     margin-bottom: 15px;
 
 }
-.new > .left > .headlight > .item > .time{
+
+.new > .left > .headlight > .item > .time {
     float: right;
 }
-.new > .left > .item > .item-ul > .item-li{
+
+.new > .left > .item > .item-ul > .item-li {
     color: #555;
-    font-family: "Noto Sans KR","돋움",dotum,sans-serif;
+    font-family: "Noto Sans KR", "돋움", dotum, sans-serif;
     font-size: 13.5px;
     font-weight: normal;
 }
+
 .new > .middle {
-    border: 1px solid red;
+
+    border-right: 1px solid #ddd;
     width: 349px;
-    height: 355px;
+    height: 360px;
     align-items: center;
     display: flex;
     flex-direction: column;
     background: url("http://www.monami.com/images/main/inquiry_bg.jpg") no-repeat;
-
 }
 
 .new > .middle > .title {
@@ -982,7 +995,7 @@ justify-content: space-between;
     margin-bottom: 33px;
 }
 
-.new > .middle  > a {
+.new > .middle > a {
     width: 167px;
     height: 35px;
     border: 2px solid #c40f39;
@@ -992,42 +1005,156 @@ justify-content: space-between;
     line-height: 35px;
 }
 
+.new > .right {
+    border-right: 1px solid #ddd;
+}
+
 .fam-link {
+    width: 94%;
     height: 53px;
-    /*align-items: ;*/
+    align-items: start;
     display: flex;
     flex-direction: row;
-    /*justify-content: ;*/
-    margin: 50px 0;
+    justify-content: start;
+    margin: 50px 38px;
 }
-.fam-link > span{
-    border: 1px solid #555;
+
+.fam-link > span {
+    width: 19%;
+}
+
+.fam-link > span:nth-of-type(2) {
+    margin: 0 25px;
+}
+
+.fam-link > span:nth-of-type(4) {
+    margin-left: 25px;
+}
+
+.fam-link > span > a {
 
 }
-.fam-link > span> a{
-    margin: 15px;
+
+.fam-link > span > a > img {
+    border: 1px solid #555;
+    width: 100%;
 }
-.fam-link > span> a > img{
-    width: 221px;
-    height: 53px;
-}
+
 footer {
-    /*align-items: ;*/
+    background-color: black;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    /*justify-content: ;*/
+    justify-content: center;
+    max-width: 1400px;
+    width: 94%;
+    padding: 60px 30px;
 }
 
 footer > .up {
-    /*align-items: ;*/
+    width: 100%;
+    height: 32px;
+    padding-bottom: 25px;
     display: flex;
     flex-direction: row;
-    /*justify-content: ;*/
+    justify-content: space-between;
+    border-bottom: 1px solid #555;
+}
+
+footer > .up > ul {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+footer > .up > ul > li > a {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Noto Sans KR", "돋움", dotum, sans-serif;
+    font-size: 13.5px;
+    font-weight: normal;
+}
+
+footer > .up > ul > li:nth-of-type(1) {
+    background: url("http://www.monami.com/images/common/fm_bar.gif") no-repeat right center;
+    padding-right: 11px;
+    margin-right: 10px;
+
+}
+
+footer > .up > ul > li:nth-of-type(2) {
+    background: url("http://www.monami.com/images/common/fm_bar.gif") no-repeat right center;
+    padding-right: 11px;
+    margin-right: 10px;
+
 }
 
 footer > .down {
-    /*align-items: ;*/
-    display: flex;
-    flex-direction: row;
-    /*justify-content: ;*/
+    width: 100%;
+    padding-top: 25px;
+}
+
+footer > .down > .left {
+    float: left;
+    margin-right: 40px;
+}
+
+footer > .down > .left > .title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+footer > .down > .left > .content {
+    width: 580px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+}
+
+footer > .down > .left > .content > span {
+    display: inline-block;
+    padding: 0 10px;
+    margin-bottom: 3px;
+}
+
+footer > .down > .left > p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+}
+
+footer > .down > .middle > .title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+footer > .down > .middle > .contact {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+
+footer > .down > .right {
+    border: 1px solid rgba(255,255,255,0.3);
+    float: right;
+}
+footer >.down>.right>a{
+display: block;
+padding: 0 13px;
+height: 34px;
+line-height: 34px;
+font-size: 13px;
+color: rgba(255,255,255,0.4);
+background: url("http://www.monami.com/images/common/family_arr.png") no-repeat 95% center;
+}
+footer >.down>.right > ul > li > a{
+    color: rgba(255,255,255,0.4);
 }
