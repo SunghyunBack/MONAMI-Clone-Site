@@ -452,7 +452,6 @@ ul {
     width: 392px;
     height: 360px;
     margin-right: 22px;
-    border: 1px solid red;
 }
 
 .container > .container-box > .container-box-up > .left > .sub-title {
@@ -485,7 +484,6 @@ ul {
 }
 
 .container > .container-box > .container-box-up > .left > .item {
-    border: 1px solid pink;
     height: 205px;
     align-items: center;
     display: flex;
@@ -503,6 +501,8 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 
@@ -520,7 +520,7 @@ ul {
     margin-top: 20px;
 }
 
-.container > .container-box > .container-box-up > .left > .item > .panner > .plus span {
+.container > .container-box > .container-box-up > .left > .item > .panner > .plus  span {
     position: absolute;
     margin-top: 20px;
     left: 0;
@@ -528,18 +528,21 @@ ul {
     height: 2px;
     background-color: white;
     border-radius: 4px;
-}
-
-.container > .container-box > .container-box-up > .left > .item > .panner > .plus span:nth-of-type(1) {
 
 }
 
+.container > .container-box > .container-box-up > .left > .item > .panner > .plus span:nth-of-type(1){
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
 .container > .container-box > .container-box-up > .left > .item > .panner > .plus span:nth-of-type(2) {
     transform: rotate(90deg);
+    transition: transform 0.3s ease;
+    display: inline-block;
 }
 
 .container > .container-box > .container-box-up > .right {
-    border: 1px solid blue;
     width: 786px;
     height: 360px;
     align-items: center;
@@ -566,6 +569,8 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .container > .container-box > .container-box-up > .left > .item > .panner > .plus,
@@ -593,11 +598,15 @@ ul {
 }
 
 .container > .container-box > .container-box-up > .right > .item > .panner > .plus span:nth-of-type(1) {
-
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    display: inline-block;
 }
 
 .container > .container-box > .container-box-up > .right > .item > .panner > .plus span:nth-of-type(2) {
     transform: rotate(90deg);
+    transition: transform 0.3s ease;
+    display: inline-block;
 }
 
 
@@ -607,7 +616,6 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 1px solid purple;
 }
 
 .container > .container-box > .container-box-down > .item {
@@ -618,20 +626,17 @@ ul {
 }
 
 .container > .container-box > .container-box-down > .item-one {
-    border: 1px solid green;
     width: 392px;
     height: 292px;
 }
 
 .container > .container-box > .container-box-down > .item-two {
-    border: 1px solid yellow;
     width: 450px;
     height: 439px;
 
 }
 
 .container > .container-box > .container-box-down > .item-three {
-    border: 1px solid orange;
     width: 312px;
     height: 292px;
 }
@@ -645,6 +650,8 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .container > .container-box > .container-box-down > .item > .panner > .plus,
@@ -730,9 +737,6 @@ ul {
 
 }
 
-.slide > .slide-title > .item li:nth-of-type(1) {
-
-}
 
 .slide > .slide-title > .item li:nth-of-type(2) {
     margin-left: 5px;
@@ -777,6 +781,7 @@ ul {
     width: 100%;
     height: 100%;
 }
+
 
 .slide > .slide-box > .slide-ul > .slide-li > a > img {
     width: 100%;
@@ -1005,6 +1010,12 @@ ul {
     line-height: 35px;
 }
 
+.new > .middle > a:hover {
+    background-color: #c40f39;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
 .new > .right {
     border-right: 1px solid #ddd;
 }
@@ -1036,8 +1047,12 @@ ul {
 }
 
 .fam-link > span > a > img {
-    border: 1px solid #555;
+    border: 1px solid #ddd;
     width: 100%;
+    transition: border 0.2s ease;
+}
+.fam-link > span > a > img:hover{
+    border: 1px solid #c40f39;
 }
 
 footer {
@@ -1051,7 +1066,7 @@ footer {
     padding: 60px 30px;
 }
 
-footer > .up {
+footer > .lift {
     width: 100%;
     height: 32px;
     padding-bottom: 25px;
@@ -1061,100 +1076,122 @@ footer > .up {
     border-bottom: 1px solid #555;
 }
 
-footer > .up > ul {
+footer > .lift > ul {
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-footer > .up > ul > li > a {
+footer > .lift > ul > li > a {
     color: rgba(255, 255, 255, 0.5);
     font-family: "Noto Sans KR", "돋움", dotum, sans-serif;
     font-size: 13.5px;
     font-weight: normal;
 }
 
-footer > .up > ul > li:nth-of-type(1) {
+footer > .lift > ul > li:nth-of-type(1) {
     background: url("http://www.monami.com/images/common/fm_bar.gif") no-repeat right center;
     padding-right: 11px;
     margin-right: 10px;
 
 }
 
-footer > .up > ul > li:nth-of-type(2) {
+footer > .lift > ul > li:nth-of-type(2) {
     background: url("http://www.monami.com/images/common/fm_bar.gif") no-repeat right center;
     padding-right: 11px;
     margin-right: 10px;
 
 }
 
-footer > .down {
+footer > .drop {
     width: 100%;
     padding-top: 25px;
 }
 
-footer > .down > .left {
+footer > .drop > .left {
     float: left;
     margin-right: 40px;
 }
 
-footer > .down > .left > .title {
+footer > .drop > .left > .title {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     color: #fff;
     margin-bottom: 10px;
 }
 
-footer > .down > .left > .content {
+footer > .drop > .left > .content {
     width: 580px;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.3);
     font-weight: 300;
 }
 
-footer > .down > .left > .content > span {
+footer > .drop > .left > .content > span {
     display: inline-block;
     padding: 0 10px;
     margin-bottom: 3px;
 }
 
-footer > .down > .left > p {
+footer > .drop > .left > p {
     font-size: 12px;
     color: rgba(255, 255, 255, 0.3);
     font-weight: 300;
 }
 
-footer > .down > .middle > .title {
+footer > .drop > .middle > .title {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     color: #fff;
     margin-bottom: 10px;
 }
 
-footer > .down > .middle > .contact {
+footer > .drop > .middle > .contact {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     color: rgba(255, 255, 255, 0.5);
 }
 
 
-
-
-
-footer > .down > .right {
-    border: 1px solid rgba(255,255,255,0.3);
+footer > .drop > .right {
     float: right;
 }
-footer >.down>.right>a{
-display: block;
-padding: 0 13px;
-height: 34px;
-line-height: 34px;
-font-size: 13px;
-color: rgba(255,255,255,0.4);
-background: url("http://www.monami.com/images/common/family_arr.png") no-repeat 95% center;
+
+footer > .drop > .right > a {
+    display: block;
+    padding: 0 13px;
+    width: 99px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.4);
+    background: url("http://www.monami.com/images/common/family_arr.png") no-repeat 95% center;
 }
-footer >.down>.right > ul > li > a{
-    color: rgba(255,255,255,0.4);
+
+footer > .drop > .right > ul {
+    position: relative;
+    top: -324px;
+    display:none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+footer > .drop > .right > .open{
+    max-height: 500px;
+}
+
+footer > .drop > .right > ul > li {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+footer > .drop > .right > ul > li > a {
+    display: block;
+    padding: 0 13px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
 }

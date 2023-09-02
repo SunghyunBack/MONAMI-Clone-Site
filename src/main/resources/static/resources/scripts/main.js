@@ -24,15 +24,6 @@ $(document).ready(function(){
     });
 })
 
-
-// $(document).ready(function(){
-//     $(".menu-trigger").click(function(){
-//         $(".all-menu").toggle(function (){
-//         $(".all-menu > span").addClass("active");
-//         });
-//     })
-// })
-
 $(document).ready(function() {
     $(".menu-trigger").click(function() {
         $(this).toggleClass("active");
@@ -56,3 +47,34 @@ $(document).ready(function() {
         }
     });
 });
+
+// NEW ARRIVALS에서 마우스 효과들
+$(document).ready(function(){
+    $(".item").mouseover(function(){
+        $(this).find(".panner").css("opacity","1");
+        $(this).find(".bar:nth-of-type(1)").css("transform", "rotate(-180deg");
+        $(this).find(".bar:nth-of-type(2)").css("transform", "rotate(-270deg");
+    });
+    $(".item").mouseleave(function(){
+        $(this).find(".panner").css("opacity","0");
+        $(this).find(".bar:nth-of-type(1)").css("transform", "rotate(180deg");
+        $(this).find(".bar:nth-of-type(2)").css("transform", "rotate(270deg");
+    });
+})
+
+// family site 아코디언 메뉴바
+$(document).ready(function() {
+    // a태그를 클릭할 때 이벤트 처리
+    $(".family-site").click(function(event) {
+        // 클릭된 a태그의 부모 요소인 ul 태그를 찾습니다.
+        var ulElement = $(this).next("ul");
+
+        // 다른 ul 요소는 숨기고 클릭된 a태그의 부모 ul 요소를 슬라이드 업/다운합니다.
+        $(".right ul").not(ulElement).slideUp();
+        ulElement.slideToggle();
+
+        // 기본 링크 동작을 중지합니다.
+        event.preventDefault();
+    });
+});
+
