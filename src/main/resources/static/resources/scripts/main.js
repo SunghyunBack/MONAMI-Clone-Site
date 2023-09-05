@@ -36,7 +36,7 @@ $(document).ready(function() {
                 "transform": "translateY(8px) rotate(45deg)"
             });
 
-            $(this).find("span:nth-of-type(2)").css("opacity", "0");
+            $(this).find("span:nth-of-type(2)").css("display", "block");
 
             $(this).find("span:nth-of-type(3)").css({
                 "-webkit-transform": "translateY(-8px) rotate(-45deg)",
@@ -61,6 +61,89 @@ $(document).ready(function(){
         $(this).find(".bar:nth-of-type(2)").css("transform", "rotate(270deg");
     });
 })
+
+// 드래크 & 스크롤 이벤트
+const list = document.querySelector('.slide-ul');
+const listScrollWidth = list.scrollWidth;
+const listClientWidth = list.clientWidth;
+let startX=0;
+let nowX=0;
+let endX =0;
+let listX =0;
+
+
+
+
+
+// 유틸함수
+const getClientX = (e) =>{
+    const isTouches = e.touches ? true:false;
+    return isTouches ? e.touches[0].clientX : e.clientX;
+};
+const getTranslateX = () => {
+    return parseInt(getComputedStyle(list).transform.split(/[^\-0-9]+/g)[5]);
+};
+const setTranslateX= (x) =>{
+    list.style.transform = 'translateX(${x}px)';
+};
+
+const bindEvents =() =>{
+    list.addEventListener('mousedown', onScrollStart);
+    list.addEventListener('touchstart', onScrollStart);
+    list.addEventListener('click', onClick);
+};
+
+
+const onScrollStart = (e) => {
+    startX = getClientX(e);
+    window.addEventListener('mouseover', onScrollMove);
+    window.addEventListener('touchmove', onScrollMove);
+    window.addEventListener('mouseup', onScrollEnd);
+    window.addEventListener('touchend', onScrollEnd);
+};
+const onScrollMove = (e) => {
+    nowX = getClientX(e);
+    setTranslateX(listX + nowX - startX);
+};
+const onScrollEnd = (e) => {
+    endX = getClientX(e);
+    listX= getTranslateX();
+    if(listX >0){
+        setTranslateX(0);
+        list.style.transition = `all 0.3s ease`;
+        listX = 0;
+    }else if(listX<listClientWidth - listScrollWidth){
+        setTranslateX(listClientWidth - listScrollWidth);
+        list.style.transition = `all 0.3s ease`;
+        listX = listClientWidth - listScrollWidth;
+    }
+    window.removeEventListener('mousedown', onScrollStart);
+    window.removeEventListener('touchstart', onScrollStart);
+    window.removeEventListener('mousemove', onScrollMove);
+    window.removeEventListener('touchmove', onScrollMove);
+    window.removeEventListener('mouseup', onScrollEnd);
+    window.removeEventListener('touchend', onScrollEnd);
+    window.removeEventListener('click', onClick);
+
+    setTimeout(() => {
+        bindEvents();
+        list.style.transition = '';
+    }, 300);
+};
+const onClick = (e) => {
+    if(startX-endX !==0){
+        e.preventDefault();
+    }
+};
+
+
+
+bindEvents();
+
+
+
+
+
 
 // family site 아코디언 메뉴바
 $(document).ready(function() {

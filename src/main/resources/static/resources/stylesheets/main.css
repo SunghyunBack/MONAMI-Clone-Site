@@ -19,6 +19,7 @@ h2 {
 
 body {
     font-family: "Noto Sans KR", "돋움", dotum, sans-serif;
+    /*width: 100%;*/
     height: auto;
 }
 
@@ -47,6 +48,8 @@ ul {
 
 .header > .header-box {
     width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
     height: 4rem;
     align-items: center;
     display: flex;
@@ -60,7 +63,7 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    padding-left: 1rem;
+
 }
 
 .header > .header-box > .header-left > .language {
@@ -146,7 +149,7 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: end;
-    margin-right: 3rem;
+
 
 }
 
@@ -165,32 +168,29 @@ ul {
 }
 
 .header > .nav {
-    width: 100%;
-
-
+    /*width: 100%;*/
 }
 
 .header > .nav > .nav-box {
-    padding: 0 2rem 0 2rem;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
     position: relative;
 
 }
 
 
-.header > .nav > .nav-box > .h1 {
+.header > .nav > .nav-box > h1 {
+    float: left;
     width: 162px;
     height: 89px;
+    display: inline-block;
 }
 
 .header > .nav > .nav-box > .nav-title {
     width: 1076px;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
+    float: left;
+
 }
 
 .header > .nav > .nav-box > .nav-title:after {
@@ -199,26 +199,25 @@ ul {
 }
 
 .header > .nav > .nav-box > .nav-title > ul {
-    width: 100%;
-    align-items: start;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     text-align: center;
+    margin-left: 60px;
 }
 
 .header > .nav > .nav-box > .nav-title > ul > li {
-    font-size: 17px;
-    height: 89px;
-    align-items: start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 33px;
+
     position: relative;
-    box-sizing: border-box;
-    text-align: center;
+    display: inline-block;
     vertical-align: top;
+    margin: 0 33px;
+    height: 89px;
+    line-height: 89px;
+    font-size: 17px;
+    color: #303030;
+    transition: all 0.3s;
+}
+
+.header > .nav > .nav-box > .nav-title > ul > li:first-child {
+    margin: 0 33px 0 0;
 }
 
 .header > .nav > .nav-box > .nav-title > ul > li > a {
@@ -233,15 +232,13 @@ ul {
 .header > .nav > .nav-box > .nav-title > ul > li > ul {
     display: none;
     position: absolute;
-    top: 90px;
-    width: 240px;
+    left: -78px;
+    top: 100%;
+    z-index: 100;
+    width: 180px;
+    padding: 12px 25px;
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    padding-top: 12px;
-    margin-top: 0;
-    padding-bottom: 12px;
-    margin-bottom: 0;
-
 }
 
 .header > .nav > .nav-box > .nav-title > ul > li:first-child {
@@ -254,23 +251,37 @@ ul {
 
 .header > .nav > .nav-box > .nav-title > ul > li > ul > li {
     border-bottom: 1px solid #e1e1e1;
-    font-size: 14px;
+    /*font-size: 14px;*/
+    /*height: 50px;*/
+    /*color: #303030;*/
+    line-height: 89px;
+    font-size: 17px;
     color: #303030;
-    padding: 15px 30px;
-    margin: 0 15px;
 }
 
+.header > .nav > .nav-box > .nav-title > ul > li > ul > li > a {
+    display: block;
+    height: 49px;
+    line-height: 49px;
+    font-size: 14px;
+    color: #6e6e6e;
+    transition: all 0.3s;
+}
 
 .header > .nav > .nav-box > .search {
-
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
+    float: right;
+    width: 162px;
 }
 
 .header > .nav > .nav-box > .search > a {
+    float: right;
     margin-right: 15px;
+    margin-top: 36px;
+}
+
+.header > .nav > .nav-box > .search > .hambuger-menu {
+    margin-top: 36px;
+    float: right;
 }
 
 .menu-trigger,
@@ -325,20 +336,20 @@ ul {
 .header > .nav > .nav-box > .all-menu {
     background: rgba(255, 255, 255, 0.9);
     position: absolute;
-    top: 95px;
-    width: 94%;
+    top: 89px;
+    width: 100%;
     overflow: hidden;
-    opacity: 0;
+    display: none;
     visibility: hidden;
-    /*transform: translateY(-20px);*/
+    transform: translateY(-20px);
     transition: opacity 0.5s ease, visibility 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
 }
 
 .header > .nav > .nav-box > .all-menu.active {
-    opacity: 1;
+    display: block;
     visibility: visible;
     max-height: 460px;
-    /*transform: translateY(0);*/
+    transform: translateY(0);
 }
 
 
@@ -367,6 +378,10 @@ ul {
     background: #c40f39;
 }
 
+.header > .nav > .nav-box > .all-menu > .menu-box > ul {
+
+}
+
 .header > .nav > .nav-box > .all-menu > .menu-box > ul > li {
     margin-bottom: 15px;
 }
@@ -391,9 +406,10 @@ ul {
     padding-top: 160px;
     overflow: hidden;
     position: relative;
-    background-image: url("http://www.monami.com/images/main/visual1.jpg");
-    object-fit: cover;
-    background-repeat: no-repeat;
+    background: url("http://www.monami.com/images/main/visual1.jpg") no-repeat center;
+    /*background-image: url("http://www.monami.com/images/main/visual1.jpg");*/
+    /*object-fit: cover;*/
+    /*background-repeat: no-repeat;*/
 }
 
 
@@ -520,7 +536,7 @@ ul {
     margin-top: 20px;
 }
 
-.container > .container-box > .container-box-up > .left > .item > .panner > .plus  span {
+.container > .container-box > .container-box-up > .left > .item > .panner > .plus span {
     position: absolute;
     margin-top: 20px;
     left: 0;
@@ -531,11 +547,12 @@ ul {
 
 }
 
-.container > .container-box > .container-box-up > .left > .item > .panner > .plus span:nth-of-type(1){
+.container > .container-box > .container-box-up > .left > .item > .panner > .plus span:nth-of-type(1) {
     transform: rotate(0deg);
     transition: transform 0.3s ease;
     display: inline-block;
 }
+
 .container > .container-box > .container-box-up > .left > .item > .panner > .plus span:nth-of-type(2) {
     transform: rotate(90deg);
     transition: transform 0.3s ease;
@@ -760,21 +777,24 @@ ul {
     padding: 50px 0;
     width: 100%;
     border: 1px solid red;
+    overflow: hidden;
     /*border-bottom: 1px dotted black;*/
 }
 
 .slide > .slide-box > .slide-ul {
+    width: 100%;
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    overflow: hidden;
+    transform: translate(0, 0);
 }
 
 .slide > .slide-box > .slide-ul > .slide-li {
     width: 266px;
     height: 492px;
     margin: 0 5px;
+    user-select: none;
 }
 
 .slide > .slide-box > .slide-ul > .slide-li > a {
@@ -847,41 +867,62 @@ ul {
 }
 
 .video {
-    width: 1263px;
-    height: 711px;
+    display: table;
+    width: 100%;
+    height: 570px;
+    text-align: center;
+    background: url("http://www.monami.com/images/main/bg_video.jpg") no-repeat center;
+    background-attachment: fixed;
+    /*width: 1263px;*/
+    /*height: 711px;*/
 }
 
 .video > video {
-    width: 1263px;
-    height: 711px;
+    width: 100% !important;
+    min-height: 100%;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+    margin: 0 0 0 0;
 }
 
 .new {
-    /*align-items: ;*/
-    display: flex;
-    flex-direction: row;
-    /*justify-content: ;*/
-    width: 1400px;
-    height: 360px;
-    padding: 0 38px;
+    /*!*align-items: ;*!*/
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*!*justify-content: ;*!*/
+    /*width: 100%;*/
+    /*height: 360px;*/
+    /*padding: 0 38px;*/
+    /*border-bottom: 1px solid #ddd;*/
+    background: #f8f8f8;
     border-bottom: 1px solid #ddd;
+    height: 355px;
 }
 
-.new > .left {
+.new > .new-box {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.new > .new-box > .left {
     width: 480px;
     padding: 20px 30px 0 0;
     border-right: 1px solid #ddd;
+    float: left;
 
 }
 
-.new > .left > .new-name {
+.new > .new-box > .left > .new-name {
     /*align-items: ;*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.new > .left > .new-name > .name-title {
+.new > .new-box > .left > .new-name > .name-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 600;
@@ -889,7 +930,7 @@ ul {
     line-height: 120%;
 }
 
-.new > .left > .new-name > .name-title:after {
+.new > .new-box > .left > .new-name > .name-title:after {
     content: "";
     display: block;
     width: 26px;
@@ -898,7 +939,7 @@ ul {
     background: #c40f39;
 }
 
-.new > .left > .new-name > .more {
+.new > .new-box > .left > .new-name > .more {
     height: 16px;
     font-size: 11px;
     color: #3d3e38;
@@ -906,7 +947,7 @@ ul {
     border-bottom: 1px solid #3d3e38;
 }
 
-.new > .left > .headlight {
+.new > .new-box > .left > .headlight {
     margin: 15px 0;
     /*align-items: ;*/
     display: flex;
@@ -915,18 +956,20 @@ ul {
     border-bottom: 2px solid #bbb;
 }
 
-.new > .left > .headlight > .img {
+.new > .new-box > .left > .headlight > .img {
     width: 164px;
     height: 116px;
 
     margin-bottom: 15px;
 }
-.new > .left > .headlight > .item{
+
+.new > .new-box > .left > .headlight > .item {
     display: inline-block;
     margin-left: 25px;
     width: 90%;
 }
-.new > .left > .headlight > .item > .title {
+
+.new > .new-box > .left > .headlight > .item > .title {
     width: 250px;
     text-overflow: ellipsis;
     font-size: 21px;
@@ -934,7 +977,7 @@ ul {
     margin-bottom: 5px;
 }
 
-.new > .left > .headlight > .item > .content {
+.new > .new-box > .left > .headlight > .item > .content {
     width: 250px;
     max-height: 54px;
     text-overflow: ellipsis;
@@ -944,11 +987,11 @@ ul {
 
 }
 
-.new > .left > .headlight > .item > .time {
+.new > .new-box > .left > .headlight > .item > .time {
     float: right;
 }
 
-.new > .left > .item > .item-ul > .item-li {
+.new > .new-box > .left > .item > .item-ul > .item-li {
     width: 100%;
     color: #555;
     font-family: "Noto Sans KR", "돋움", dotum, sans-serif;
@@ -956,38 +999,41 @@ ul {
     font-weight: normal;
     display: inline-block;
 }
-.new > .left > .item > .item-ul > .item-li > a{
+
+.new > .new-box > .left > .item > .item-ul > .item-li > a {
     float: left;
 }
-.new > .left > .item > .item-ul > .item-li > span{
+
+.new > .new-box > .left > .item > .item-ul > .item-li > span {
     float: right;
 }
 
-.new > .middle {
+.new > .new-box > .middle {
+    float: left;
 
     border-right: 1px solid #ddd;
     width: 349px;
     height: 360px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    /*align-items: center;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
     background: url("http://www.monami.com/images/main/inquiry_bg.jpg") no-repeat;
 }
 
-.new > .middle > .title {
+.new > .new-box > .middle > .title {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.new > .middle > .title > .img {
+.new > .new-box > .middle > .title > .img {
     padding-top: 76px;
     padding-bottom: 30px;
 
 }
 
-.new > .middle > .title > .main-title {
+.new > .new-box > .middle > .title > .main-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 600;
@@ -995,7 +1041,7 @@ ul {
     line-height: 120%;
 }
 
-.new > .middle > .title > .main-title:after {
+.new > .new-box > .middle > .title > .main-title:after {
     content: "";
     display: block;
     width: 26px;
@@ -1004,7 +1050,7 @@ ul {
     background: #c40f39;
 }
 
-.new > .middle > .title > .sub-content {
+.new > .new-box > .middle > .title > .sub-content {
     color: #555;
     font-family: "Noto Sans KR", "돋움", dotum, sans-serif;
     font-size: 13.5px;
@@ -1013,7 +1059,14 @@ ul {
     margin-bottom: 33px;
 }
 
-.new > .middle > a {
+.new > .new-box > .middle > .a-button {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.new > .new-box > .middle > .a-button > a {
     width: 167px;
     height: 35px;
     border: 2px solid #c40f39;
@@ -1023,63 +1076,77 @@ ul {
     line-height: 35px;
 }
 
-.new > .middle > a:hover {
+.new > .new-box > .middle > .a-button > a:hover {
     background-color: #c40f39;
     color: white;
     transition: background-color 0.3s ease;
 }
 
-.new > .right {
+.new > .new-box > .right {
+    float: left;
+
     border-right: 1px solid #ddd;
 }
 
 .fam-link {
-    width: 94%;
-    height: 53px;
-    align-items: start;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    margin: 50px 38px;
+    display: block;
+    padding: 45px 0;
+    width: 1400px;
+    margin: 0 auto;
 }
 
-.fam-link > span {
-    width: 19%;
+.fam-link > ul > {
+    overflow: hidden;
 }
 
-.fam-link > span:nth-of-type(2) {
-    margin: 0 25px;
+.fam-link > ul > li:nth-of-type(1) {
+    float: left;
+    margin-right: 50px;
+}
+.fam-link > ul > li:nth-of-type(2) {
+    float: left;
+    margin-right: 50px;
+}
+.fam-link > ul > li:nth-of-type(3) {
+    float: left;
+    margin-right: 50px;
+}
+.fam-link > ul > li > a {
+    display: block;
+    padding: 1px;
+    transition: all 0.3s ease-in-out;
 }
 
-.fam-link > span:nth-of-type(4) {
-    margin-left: 25px;
-}
-
-.fam-link > span > a {
-
-}
-
-.fam-link > span > a > img {
+.fam-link > ul > li > a > img {
     border: 1px solid #ddd;
-    width: 100%;
-    transition: border 0.2s ease;
+    vertical-align: middle;
 }
-.fam-link > span > a > img:hover{
+
+.fam-link > ul > li > a > img:hover {
     border: 1px solid #c40f39;
 }
 
 footer {
     background-color: black;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 1400px;
-    width: 94%;
-    padding: 60px 30px;
+    width: 100%;
+    position: relative;
+    padding: 60px 0 65px;
+    display: block;
 }
 
-footer > .lift {
+footer > .foot {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+
+}
+footer > .foot:after{
+    display: block;
+    content: "";
+    clear: both;
+}
+footer > .foot > .lift {
     width: 100%;
     height: 32px;
     padding-bottom: 25px;
@@ -1089,89 +1156,98 @@ footer > .lift {
     border-bottom: 1px solid #555;
 }
 
-footer > .lift > ul {
+footer > .foot > .lift > ul {
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-footer > .lift > ul > li > a {
+footer > .foot > .lift > ul > li > a {
     color: rgba(255, 255, 255, 0.5);
     font-family: "Noto Sans KR", "돋움", dotum, sans-serif;
     font-size: 13.5px;
     font-weight: normal;
 }
 
-footer > .lift > ul > li:nth-of-type(1) {
+footer > .foot > .lift > ul > li:nth-of-type(1) {
     background: url("http://www.monami.com/images/common/fm_bar.gif") no-repeat right center;
     padding-right: 11px;
     margin-right: 10px;
 
 }
 
-footer > .lift > ul > li:nth-of-type(2) {
+footer > .foot > .lift > ul > li:nth-of-type(2) {
     background: url("http://www.monami.com/images/common/fm_bar.gif") no-repeat right center;
     padding-right: 11px;
     margin-right: 10px;
 
 }
 
-footer > .drop {
+footer > .foot > .drop {
     width: 100%;
     padding-top: 25px;
+    /*align-items: start;*/
+    /*display: flex;*/
+    /*flex-direction: row;*/
+
 }
 
-footer > .drop > .left {
+footer > .foot > .drop > .left {
     float: left;
     margin-right: 40px;
 }
 
-footer > .drop > .left > .title {
+footer > .foot > .drop > .left > .title {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     color: #fff;
     margin-bottom: 10px;
 }
 
-footer > .drop > .left > .content {
+footer > .foot > .drop > .left > .content {
     width: 580px;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.3);
     font-weight: 300;
 }
 
-footer > .drop > .left > .content > span {
+footer > .foot > .drop > .left > .content > span {
     display: inline-block;
     padding: 0 10px;
     margin-bottom: 3px;
 }
 
-footer > .drop > .left > p {
+footer > .foot > .drop > .left > p {
     font-size: 12px;
     color: rgba(255, 255, 255, 0.3);
     font-weight: 300;
 }
 
-footer > .drop > .middle > .title {
+footer > .foot > .drop > .middle {
+    float: left;
+
+}
+
+footer > .foot > .drop > .middle > .title {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     color: #fff;
     margin-bottom: 10px;
 }
 
-footer > .drop > .middle > .contact {
+footer > .foot > .drop > .middle > .contact {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     color: rgba(255, 255, 255, 0.5);
 }
 
 
-footer > .drop > .right {
+footer > .foot > .drop > .right {
     float: right;
 }
 
-footer > .drop > .right > a {
+footer > .foot > .drop > .right > a {
     display: block;
     padding: 0 13px;
     width: 99px;
@@ -1183,28 +1259,30 @@ footer > .drop > .right > a {
     background: url("http://www.monami.com/images/common/family_arr.png") no-repeat 95% center;
 }
 
-footer > .drop > .right > ul {
+footer > .foot > .drop > .right > ul {
     position: relative;
     top: -324px;
-    display:none;
+    display: none;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
 }
-footer > .drop > .right > .open{
+
+footer > .foot > .drop > .right > .open {
     max-height: 500px;
 }
 
-footer > .drop > .right > ul > li {
+footer > .foot > .drop > .right > ul > li {
+    position: relative;
     border: 1px solid rgba(255, 255, 255, 0.3);
 
 }
 
-footer > .drop > .right > ul > li > a {
+footer > .foot > .drop > .right > ul > li > a {
     display: block;
     padding: 0 13px;
     height: 34px;
     line-height: 34px;
     font-size: 13px;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255, 255, 255, 0.6);
 }
