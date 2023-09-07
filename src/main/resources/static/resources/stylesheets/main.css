@@ -500,17 +500,16 @@ ul {
 }
 
 .container > .container-box > .container-box-up > .left > .item {
-    height: 205px;
+    /*height: 205px;*/
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
-.container > .container-box > .container-box-up > .left > .item > .panner,
-.container > .container-box > .container-box-up > .left > .item > .panner {
-    width: 90%;
-    height: 90%;
+.container > .container-box > .container-box-up > .left > .item > .panner{
+    width: 360px;
+    height: 180px;
+    position: absolute;
     color: white;
     background-color: #c40f39;
     align-items: center;
@@ -520,6 +519,7 @@ ul {
     opacity: 0;
     transition: opacity 0.5s ease;
 }
+
 
 
 .container > .container-box > .container-box-up > .left > .item > .panner > .plus,
@@ -569,8 +569,8 @@ ul {
 }
 
 .container > .container-box > .container-box-up > .right > .item {
-    width: 100%;
-    height: 100%;
+    /*width: 100%;*/
+    /*height: 100%;*/
     align-items: center;
     display: flex;
     /*flex-direction: ;*/
@@ -578,8 +578,9 @@ ul {
 }
 
 .container > .container-box > .container-box-up > .right > .item > .panner {
-    width: 90%;
-    height: 90%;
+    position: absolute;
+    width: 760px;
+    height: 340px;
     color: white;
     background-color: #c40f39;
     align-items: center;
@@ -629,6 +630,7 @@ ul {
 
 .container > .container-box > .container-box-down {
     width: 1200px;
+    margin-bottom: 80px;
     align-items: start;
     display: flex;
     flex-direction: row;
@@ -658,9 +660,10 @@ ul {
     height: 292px;
 }
 
-.container > .container-box > .container-box-down > .item > .panner {
-    width: 90%;
-    height: 90%;
+.container > .container-box > .container-box-down > .item-one > .panner {
+    position: absolute;
+    width: 360px;
+    height: 270px;
     color: white;
     background-color: #c40f39;
     align-items: center;
@@ -670,7 +673,32 @@ ul {
     opacity: 0;
     transition: opacity 0.5s ease;
 }
-
+.container > .container-box > .container-box-down > .item-two > .panner {
+    position: absolute;
+    width: 420px;
+    height: 400px;
+    color: white;
+    background-color: #c40f39;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.container > .container-box > .container-box-down > .item-three > .panner {
+    position: absolute;
+    width: 280px;
+    height: 250px;
+    color: white;
+    background-color: #c40f39;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
 .container > .container-box > .container-box-down > .item > .panner > .plus,
 .container > .container-box > .container-box-down > .item > .panner > .plus span {
     display: inline-block;
@@ -706,7 +734,6 @@ ul {
 
 
 .slide {
-
     width: 100%;
     align-items: center;
     display: flex;
@@ -776,7 +803,7 @@ ul {
 .slide > .slide-box {
     padding: 50px 0;
     width: 100%;
-    border: 1px solid red;
+
     overflow: hidden;
     /*border-bottom: 1px dotted black;*/
 }
