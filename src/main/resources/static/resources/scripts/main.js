@@ -75,8 +75,6 @@ let isDragging = false;
 
 const end = () => {
     isDown = false;
-    // 슬라이드 이동이 끝나면 클릭 이벤트를 다시 활성화
-    isDragging = false;
 }
 
 const start = (e) => {
@@ -108,62 +106,28 @@ const move = (e) => {
 
     // 클릭 이벤트 핸들러 추가
     const clickHandler = (e) => {
+        // 슬라이드 이동 중에 클릭 이벤트 무시
         if (isDragging) {
+            e.preventDefault();
             e.stopPropagation();
-        } else {
-            // 클릭 이벤트 처리를 여기에 추가
-            // 예: slider 요소 내부의 <a> 태그 클릭 시 무시
-            if (e.target.closest('a')) {
-                e.preventDefault();
-            }
         }
     };
 
-    slider.addEventListener('click', clickHandler);
+    // 클릭 이벤트를 <a> 태그에 바인딩
+    slider.querySelectorAll('a').forEach((anchor) => {
+        anchor.addEventListener('click', clickHandler);
+    });
 })();
 
 
-// let isDown = false;
-// let startX;
-// let scrollLeft;
-// const slider = document.querySelector('.slide-ul');
-//
-//
-// const end = () => {
-//     isDown = false;
-//
-// }
-//
-// const start = (e) => {
-//     isDown = true;
-//     startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
-//     scrollLeft = slider.scrollLeft;
-//     }
-// const move = (e) => {
-//     if(!isDown) return;
-//     e.preventDefault();
-//     const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
-//     const dist = (x - startX);
-//     slider.scrollLeft = scrollLeft - dist;
-// }
-//
-//
-// (() => {
-//     slider.addEventListener('mousedown', start);
-//     slider.addEventListener('touchstart', start);
-//
-//     slider.addEventListener('mousemove', move);
-//     slider.addEventListener('touchmove', move);
-//
-//     slider.addEventListener('mouseleave', end);
-//     slider.addEventListener('mouseup', end);
-//     slider.addEventListener('touchend', end);
-//
-// })();
 
 
 
-// family site 아코디언 메뉴바
+
+
+
+
+    // family site 아코디언 메뉴바
 $(document).ready(function() {
     // a태그를 클릭할 때 이벤트 처리
     $(".family-site").click(function(event) {
