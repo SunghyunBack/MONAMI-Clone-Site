@@ -3,16 +3,19 @@ $(document).ready(function () {
     $(".down").click(function () {
         $(".down").hide();
         $(".up").show();
-        $(".language .english").show();
         $(".language").css("max-height", "3rem");
+        // $(".language .english").show();
+        // $(".language").css("transition", "max-height 0.5s ease");
     });
     $(".up").click(function() {
         $(".up").hide();
         $(".down").show();
-        $(".language .english").hide();
+        // $(".language .english").hide();
         $(".language").css("max-height", "1.5rem");
+        // $(".language").css("transition", "max-height 0.5s ease");
     });
 })
+
 
 // nav의 아코디언 메뉴
 $(document).ready(function(){
@@ -28,7 +31,6 @@ $(document).ready(function() {
     $(".menu-trigger").click(function() {
         $(this).toggleClass("active");
         $(".all-menu").toggleClass("active");
-        // $(".all-menu").slideToggle(500);
 
         if ($(this).hasClass("active")) {
             $(this).find("span:nth-of-type(1)").css({
@@ -36,7 +38,7 @@ $(document).ready(function() {
                 "transform": "translateY(8px) rotate(45deg)"
             });
 
-            $(this).find("span:nth-of-type(2)").css("display", "block");
+            $(this).find("span:nth-of-type(2)").css("display", "none");
 
             $(this).find("span:nth-of-type(3)").css({
                 "-webkit-transform": "translateY(-8px) rotate(-45deg)",
@@ -63,85 +65,101 @@ $(document).ready(function(){
 })
 
 // 드래크 & 스크롤 이벤트
-const list = document.querySelector('.slide-ul');
-const listScrollWidth = list.scrollWidth;
-const listClientWidth = list.clientWidth;
-let startX=0;
-let nowX=0;
-let endX =0;
-let listX =0;
+let isDown = false;
+let startX;
+let scrollLeft;
+const slider = document.querySelector('.slide-ul');
+
+// 클릭 이벤트를 무시하기 위한 상태 변수 추가
+let isDragging = false;
+
+const end = () => {
+    isDown = false;
+    // 슬라이드 이동이 끝나면 클릭 이벤트를 다시 활성화
+    isDragging = false;
+}
+
+const start = (e) => {
+    isDown = true;
+    startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    // 드래그 시작 시 isDragging을 true로 설정
+    isDragging = true;
+}
+
+const move = (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+    const dist = x - startX;
+    slider.scrollLeft = scrollLeft - dist;
+}
+
+(() => {
+    slider.addEventListener('mousedown', start);
+    slider.addEventListener('touchstart', start);
+
+    slider.addEventListener('mousemove', move);
+    slider.addEventListener('touchmove', move);
+
+    slider.addEventListener('mouseleave', end);
+    slider.addEventListener('mouseup', end);
+    slider.addEventListener('touchend', end);
+
+    // 클릭 이벤트 핸들러 추가
+    const clickHandler = (e) => {
+        if (isDragging) {
+            e.stopPropagation();
+        } else {
+            // 클릭 이벤트 처리를 여기에 추가
+            // 예: slider 요소 내부의 <a> 태그 클릭 시 무시
+            if (e.target.closest('a')) {
+                e.preventDefault();
+            }
+        }
+    };
+
+    slider.addEventListener('click', clickHandler);
+})();
 
 
-
-
-
-// 유틸함수
-const getClientX = (e) =>{
-    const isTouches = e.touches ? true:false;
-    return isTouches ? e.touches[0].clientX : e.clientX;
-};
-const getTranslateX = () => {
-    return parseInt(getComputedStyle(list).transform.split(/[^\-0-9]+/g)[5]);
-};
-const setTranslateX= (x) =>{
-    list.style.transform = 'translateX(${x}px)';
-};
-
-const bindEvents =() =>{
-    list.addEventListener('mousedown', onScrollStart);
-    list.addEventListener('touchstart', onScrollStart);
-    list.addEventListener('click', onClick);
-};
-
-
-const onScrollStart = (e) => {
-    startX = getClientX(e);
-    window.addEventListener('mouseover', onScrollMove);
-    window.addEventListener('touchmove', onScrollMove);
-    window.addEventListener('mouseup', onScrollEnd);
-    window.addEventListener('touchend', onScrollEnd);
-};
-const onScrollMove = (e) => {
-    nowX = getClientX(e);
-    setTranslateX(listX + nowX - startX);
-};
-const onScrollEnd = (e) => {
-    endX = getClientX(e);
-    listX= getTranslateX();
-    if(listX >0){
-        setTranslateX(0);
-        list.style.transition = `all 0.3s ease`;
-        listX = 0;
-    }else if(listX<listClientWidth - listScrollWidth){
-        setTranslateX(listClientWidth - listScrollWidth);
-        list.style.transition = `all 0.3s ease`;
-        listX = listClientWidth - listScrollWidth;
-    }
-    window.removeEventListener('mousedown', onScrollStart);
-    window.removeEventListener('touchstart', onScrollStart);
-    window.removeEventListener('mousemove', onScrollMove);
-    window.removeEventListener('touchmove', onScrollMove);
-    window.removeEventListener('mouseup', onScrollEnd);
-    window.removeEventListener('touchend', onScrollEnd);
-    window.removeEventListener('click', onClick);
-
-    setTimeout(() => {
-        bindEvents();
-        list.style.transition = '';
-    }, 300);
-};
-const onClick = (e) => {
-    if(startX-endX !==0){
-        e.preventDefault();
-    }
-};
-
-
-
-bindEvents();
-
-
-
+// let isDown = false;
+// let startX;
+// let scrollLeft;
+// const slider = document.querySelector('.slide-ul');
+//
+//
+// const end = () => {
+//     isDown = false;
+//
+// }
+//
+// const start = (e) => {
+//     isDown = true;
+//     startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+//     scrollLeft = slider.scrollLeft;
+//     }
+// const move = (e) => {
+//     if(!isDown) return;
+//     e.preventDefault();
+//     const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+//     const dist = (x - startX);
+//     slider.scrollLeft = scrollLeft - dist;
+// }
+//
+//
+// (() => {
+//     slider.addEventListener('mousedown', start);
+//     slider.addEventListener('touchstart', start);
+//
+//     slider.addEventListener('mousemove', move);
+//     slider.addEventListener('touchmove', move);
+//
+//     slider.addEventListener('mouseleave', end);
+//     slider.addEventListener('mouseup', end);
+//     slider.addEventListener('touchend', end);
+//
+// })();
 
 
 
@@ -150,14 +168,15 @@ $(document).ready(function() {
     // a태그를 클릭할 때 이벤트 처리
     $(".family-site").click(function(event) {
         // 클릭된 a태그의 부모 요소인 ul 태그를 찾습니다.
-        var ulElement = $(this).next("ul");
+        var ulElement = $(this).closest("span.right").find("ul");
 
         // 다른 ul 요소는 숨기고 클릭된 a태그의 부모 ul 요소를 슬라이드 업/다운합니다.
         $(".right ul").not(ulElement).slideUp();
-        ulElement.slideToggle();
+        ulElement.slideToggle("slow");
 
         // 기본 링크 동작을 중지합니다.
         event.preventDefault();
     });
 });
+
 

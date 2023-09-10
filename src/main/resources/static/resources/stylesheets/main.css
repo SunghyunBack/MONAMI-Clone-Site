@@ -43,7 +43,7 @@ ul {
     position: fixed;
     z-index: 999999999;
     background-color: white;
-    border-bottom: 1px solid #9b9a9a;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .header > .header-box {
@@ -55,7 +55,7 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 1px solid #9b9a9a;
+
 }
 
 .header > .header-box > .header-left {
@@ -63,7 +63,6 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: start;
-
 }
 
 .header > .header-box > .header-left > .language {
@@ -77,9 +76,9 @@ ul {
     justify-content: start;
     border: 1px solid #9b9a9a;
     border-radius: 8px;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
-    vertical-align: top;
+    transition: max-height 0.5s ease-in-out;
 }
 
 .header > .header-box > .header-left > .language > * {
@@ -169,6 +168,7 @@ ul {
 
 .header > .nav {
     /*width: 100%;*/
+    border-top: 1px solid #eaeaea;
 }
 
 .header > .nav > .nav-box {
@@ -289,12 +289,14 @@ ul {
     display: inline-block;
     transition: all .4s;
     box-sizing: border-box;
+
 }
 
 .menu-trigger {
     position: relative;
     width: 19px;
     height: 18px;
+    transition: background-color 0.3s ease;
 }
 
 .menu-trigger span {
@@ -344,7 +346,9 @@ ul {
     transform: translateY(-20px);
     transition: opacity 0.5s ease, visibility 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
 }
-
+.header > .nav > .nav-box > .all-menu{
+    transition: transform 0.3s ease
+}
 .header > .nav > .nav-box > .all-menu.active {
     display: block;
     visibility: visible;
@@ -803,25 +807,60 @@ ul {
 .slide > .slide-box {
     padding: 50px 0;
     width: 100%;
-
     overflow: hidden;
-    /*border-bottom: 1px dotted black;*/
+    border-bottom: 1px dotted black;
+
+    position: relative;
+
+    &:before,
+    &:after {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+
+        content: "";
+        display: block;
+
+        height: 100%;
+    }
+
+    &:before {
+        left: 0;
+    }
+
+    &:after {
+        right: 0;
+    }
+
 }
 
 .slide > .slide-box > .slide-ul {
     width: 100%;
-    align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     transform: translate(0, 0);
+
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0;
+    /*cursor: pointer;*/
+    &.active {
+        cursor: grab;
+    }
+
 }
 
 .slide > .slide-box > .slide-ul > .slide-li {
+
     width: 266px;
     height: 492px;
     margin: 0 5px;
     user-select: none;
+    display: inline-block;
+    font-size: 33px;
+    font-weight: bold;
+
 }
 
 .slide > .slide-box > .slide-ul > .slide-li > a {
@@ -863,6 +902,7 @@ ul {
     font-weight: 600;
     padding-left: 25px;
 }
+
 
 .slide > .finger-icon {
     position: relative;
@@ -1272,31 +1312,33 @@ footer > .foot > .drop > .middle > .contact {
 
 footer > .foot > .drop > .right {
     float: right;
+    position: relative;
+    width: 242px;
+    height: 34px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 footer > .foot > .drop > .right > a {
     display: block;
     padding: 0 13px;
-    width: 99px;
     height: 34px;
     line-height: 34px;
     font-size: 13px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+
     color: rgba(255, 255, 255, 0.4);
     background: url("http://www.monami.com/images/common/family_arr.png") no-repeat 95% center;
 }
 
 footer > .foot > .drop > .right > ul {
-    position: relative;
-    top: -324px;
     display: none;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-footer > .foot > .drop > .right > .open {
-    max-height: 500px;
+    background: rgba(0,0,0,1);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 0;
+    position: absolute;
+    left: -1px;
+    bottom: 100%;
+    width: 242px;
 }
 
 footer > .foot > .drop > .right > ul > li {
@@ -1313,3 +1355,9 @@ footer > .foot > .drop > .right > ul > li > a {
     font-size: 13px;
     color: rgba(255, 255, 255, 0.6);
 }
+
+
+
+
+
+
